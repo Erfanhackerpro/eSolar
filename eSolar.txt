@@ -1,0 +1,26 @@
+eSolar/
+├── index.html
+├── about.html
+├── services.html
+├── projects.html
+├── contact.html
+├── css/
+│   ├── style.css
+│   ├── responsive.css
+│   └── animations.css
+├── js/
+│   ├── main.js
+│   ├── animation.js
+│   └── particles.js
+├── images/
+│   ├── logo.svg (ایجاد شده با SVG)
+│   ├── hero.webp (تصویر پیش‌فرض - نیاز به جایگزینی)
+│   ├── solar-panels.webp (تصویر پیش‌فرض)
+│   ├── background.webp (تصویر پیش‌فرض)
+│   ├── sun.webp (تصویر پیش‌فرض)
+│   └── icons/ (چند آیکون SVG)
+├── assets/ (خالی برای فایل‌های اضافی)
+├── robots.txt
+├── sitemap.xml
+├── manifest.json
+└── README.md

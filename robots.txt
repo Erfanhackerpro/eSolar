@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://esolar.ir/sitemap.xml
