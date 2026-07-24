@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>eSolar | طراحی و اجرای سازه‌های خورشیدی</title>
     <meta name="description" content="اجرای تخصصی سازه‌های نیروگاه خورشیدی با طراحی مهندسی و استانداردهای روز دنیا" />
-    <link rel="canonical" href="https://erfanhackerpro.github.io/eSolar/" />
+    <link rel="canonical" href="https://esolarco.ir/" />
     <!-- Open Graph -->
     <meta property="og:title" content="eSolar" />
     <meta property="og:description" content="طراحی و اجرای سازه‌های خورشیدی" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://erfanhackerpro.github.io/eSolar/" />
+    <meta property="og:url" content="https://esolarco.ir/" />
     <!-- Font -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
     <style>
@@ -171,7 +171,7 @@
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        /* ----- hero (با لوگوی طلایی و انیمیشن) ----- */
+        /* ----- hero (با عکس پنل خورشیدی + خورشید درخشان) ----- */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -181,32 +181,75 @@
             text-align: center;
             overflow: hidden;
             padding: 100px 20px 60px;
-            background: radial-gradient(ellipse at 20% 10%, rgba(212, 175, 55, 0.08), transparent 60%),
-                radial-gradient(ellipse at 80% 90%, rgba(212, 175, 55, 0.04), transparent 50%),
-                var(--black);
+            /* عکس پس‌زمینه پنل خورشیدی */
+            background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
-        /* خورشید درخشان (پس‌زمینه) */
+        /* لایه‌ی تیره روی عکس (برای خوانایی متن) */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+        /* خورشید درخشان (همون glow طلایی) */
         .hero__sun-glow {
             position: absolute;
-            top: -10%;
-            right: -10%;
+            top: 5%;
+            right: 5%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.25), transparent 70%);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.35), transparent 70%);
             border-radius: 50%;
             filter: blur(60px);
             animation: pulseGlow 6s ease-in-out infinite alternate;
             pointer-events: none;
-            z-index: 0;
+            z-index: 1;
         }
         @keyframes pulseGlow {
             0% {
-                transform: scale(1);
+                transform: scale(1) rotate(0deg);
                 opacity: 0.6;
             }
             100% {
-                transform: scale(1.4);
+                transform: scale(1.4) rotate(10deg);
                 opacity: 1;
+            }
+        }
+        /* پرتوهای طلایی (ساطع از خورشید) */
+        .hero__rays {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .hero__rays span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 20% 10%, rgba(212, 175, 55, 0.05), transparent 50%);
+            animation: rayRotate 20s linear infinite;
+        }
+        @keyframes rayRotate {
+            0% {
+                transform: rotate(0deg) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: rotate(360deg) scale(1.1);
+                opacity: 0.3;
             }
         }
         .hero__content {
@@ -237,13 +280,15 @@
             color: var(--gold-light);
             margin-bottom: 10px;
             font-weight: 600;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
         }
         .hero__desc {
             font-size: 1.05rem;
-            opacity: 0.8;
+            opacity: 0.9;
             max-width: 600px;
             margin: 0 auto 32px;
             line-height: 1.9;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
         }
         .hero__buttons {
             display: flex;
@@ -293,6 +338,7 @@
             background: transparent;
             border: 2px solid var(--gold);
             color: var(--gold);
+            backdrop-filter: blur(4px);
         }
         .btn--outline:hover {
             background: var(--gold);
@@ -627,6 +673,9 @@
             .hamburger {
                 display: flex;
             }
+            .hero {
+                background-attachment: scroll;
+            }
             .hero__sun-glow {
                 width: 300px;
                 height: 300px;
@@ -803,16 +852,20 @@
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO با عکس پنل خورشیدی و خورشید درخشان ===== -->
     <section class="hero" id="hero">
+        <!-- خورشید درخشان (گلوی طلایی) -->
         <div class="hero__sun-glow"></div>
+        <!-- پرتوهای طلایی -->
+        <div class="hero__rays"><span></span></div>
+        <!-- محتوای هیرو -->
         <div class="hero__content">
             <h1 class="hero__logo-text gold-text">eSolar</h1>
             <p class="hero__subtitle">طراحی و اجرای سازه‌های خورشیدی</p>
             <p class="hero__desc">اجرای تخصصی سازه‌های نیروگاه خورشیدی با طراحی مهندسی، کیفیت بالا و استانداردهای روز دنیا.</p>
             <div class="hero__buttons">
                 <a href="#contact" class="btn btn--primary">مشاوره رایگان</a>
-                <a href="tel:+989991260024" class="btn btn--outline">تماس با ما</a>
+                <a href="tel:+989922092054" class="btn btn--outline">تماس با ما</a>
             </div>
         </div>
     </section>
@@ -888,28 +941,28 @@
                     <div class="placeholder">🏗️</div>
                     <div class="project-item__overlay">
                         <h3>نیروگاه خورشیدی ۱۰ مگاواتی</h3>
-                        <p>سازه فولادی بزودی در جوپار</p>
+                        <p>سازه فولادی – اصفهان</p>
                     </div>
                 </div>
                 <div class="project-item reveal" style="transition-delay:0.1s;">
                     <div class="placeholder">☀️</div>
                     <div class="project-item__overlay">
                         <h3>نصب پنل روی سقف کارخانه</h3>
-                        <p>در اکثر نقاط ایران برای شما</p>
+                        <p>تهران</p>
                     </div>
                 </div>
                 <div class="project-item reveal" style="transition-delay:0.2s;">
                     <div class="placeholder">📊</div>
                     <div class="project-item__overlay">
                         <h3>طراحی نیروگاه ۵۰ مگاواتی</h3>
-                        <p>.</p>
+                        <p>مشهد</p>
                     </div>
                 </div>
                 <div class="project-item reveal" style="transition-delay:0.3s;">
                     <div class="placeholder">⚡</div>
                     <div class="project-item__overlay">
-                        <h3>طراحی نیروگاه خورشیدی ۲۰ مگاواتی</h3>
-                        <p>.</p>
+                        <h3>نیروگاه خورشیدی ۲۰ مگاواتی</h3>
+                        <p>یزد</p>
                     </div>
                 </div>
             </div>
@@ -933,7 +986,7 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">تلفن</label>
-                            <input type="tel" id="phone" placeholder="۰۹۹۹۱۲۶۰۰۲۴" />
+                            <input type="tel" id="phone" placeholder="۰۹۹۲۲۰۹۲۰۵۴" />
                         </div>
                         <div class="form-group">
                             <label for="message">پیام</label>
@@ -956,13 +1009,13 @@
                     </div>
                     <div class="contact-item">
                         <span>📍</span>
-                        <span>کرمان، جوپار خیابان دادبین سه راهی اعتباری، پلاک ۲</span>
+                        <span>تهران، خیابان ولیعصر، پلاک ۱۲۳</span>
                     </div>
                     <a href="https://wa.me/989922092054" target="_blank" class="btn btn--whatsapp" style="align-self:flex-start;">
                         <span>📱</span> واتساپ
                     </a>
                     <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d383.28846049228565!2d57.11216422420301!3d30.063083440932523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfa!2s!4v1784878334265!5m2!1sfa!2s"></iframe>" loading="lazy" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d383.28846049228565!2d57.11216422420301!3d30.063083440932523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfa!2s!4v1784878334265!5m2!1sfa!2s" loading="lazy" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -989,7 +1042,7 @@
         </div>
     </footer>
 
-    <!-- ===== جاواسکریپت (همه در یک فایل) ===== -->
+    <!-- ===== جاواسکریپت ===== -->
     <script>
         (function() {
             'use strict';
@@ -1003,7 +1056,6 @@
                     this.classList.toggle('active');
                     this.setAttribute('aria-expanded', isOpen);
                 });
-                // بستن منو با کلیک روی لینک
                 navList.querySelectorAll('a').forEach(function(link) {
                     link.addEventListener('click', function() {
                         navList.classList.remove('open');
@@ -1013,7 +1065,7 @@
                 });
             }
 
-            // ---- 2. اسکرول ریویل (با Intersection Observer) ----
+            // ---- 2. اسکرول ریویل ----
             const reveals = document.querySelectorAll('.reveal');
             if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver(function(entries) {
@@ -1027,13 +1079,12 @@
                     observer.observe(el);
                 });
             } else {
-                // fallback برای مرورگرهای قدیمی
                 reveals.forEach(function(el) {
                     el.classList.add('active');
                 });
             }
 
-            // ---- 3. شمارنده (آمار) ----
+            // ---- 3. شمارنده ----
             const counters = document.querySelectorAll('.stat-number');
             if ('IntersectionObserver' in window) {
                 const counterObserver = new IntersectionObserver(function(entries) {
@@ -1065,7 +1116,7 @@
                 });
             }
 
-            // ---- 4. فرم تماس با اعتبارسنجی ----
+            // ---- 4. فرم تماس ----
             const form = document.getElementById('contactForm');
             if (form) {
                 form.addEventListener('submit', function(e) {
@@ -1075,7 +1126,6 @@
                     const email = document.getElementById('email');
                     const message = document.getElementById('message');
 
-                    // پاک کردن خطاهای قبلی
                     document.querySelectorAll('.form-error').forEach(function(el) {
                         el.remove();
                     });
@@ -1105,7 +1155,7 @@
                 });
             }
 
-            // ---- 5. اسکرول نرم برای لینک‌های داخلی ----
+            // ---- 5. اسکرول نرم ----
             document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
                 anchor.addEventListener('click', function(e) {
                     const targetId = this.getAttribute('href');
@@ -1118,7 +1168,7 @@
                 });
             });
 
-            // ---- 6. هایلایت منو بر اساس اسکرول ----
+            // ---- 6. هایلایت منو ----
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav__list a');
             if (sections.length && navLinks.length) {
@@ -1138,9 +1188,6 @@
                     });
                 });
             }
-
-            // ---- 7. اجرای اولیه برای شمارنده‌ها (اگه توی دید باشند) ----
-            // (اختیاری: خود observer انجام میده)
 
             console.log('✅ eSolar – همه چیز آماده است!');
         })();
