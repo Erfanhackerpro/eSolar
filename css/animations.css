@@ -1,0 +1,49 @@
+/* ===== ANIMATIONS ===== */
+
+/* Scroll Reveal */
+[data-aos] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+}
+[data-aos="fade-right"].aos-animate {
+    transform: translateX(0);
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+}
+[data-aos="fade-left"].aos-animate {
+    transform: translateX(0);
+}
+
+[data-aos="flip-up"] {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+}
+[data-aos="flip-up"].aos-animate {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+}
+
+/* Hover Glow */
+.hover-glow {
+    transition: box-shadow 0.3s;
+}
+.hover-glow:hover {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+}
+
+/* 3D Tilt (JS will handle) */
+.tilt-effect {
+    transition: transform 0.1s ease;
+}
