@@ -1,307 +1,312 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eSolar | طراحی و اجرای سازه‌های خورشیدی</title>
-    <meta name="description" content="اجرای تخصصی سازه‌های نیروگاه خورشیدی با طراحی مهندسی، کیفیت بالا و استانداردهای روز دنیا.">
-    <meta name="keywords" content="سازه خورشیدی, نیروگاه خورشیدی, پنل خورشیدی, انرژی خورشیدی, eSolar">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://esolar.ir/">
-    <!-- Open Graph -->
-    <meta property="og:title" content="eSolar | طراحی و اجرای سازه‌های خورشیدی">
-    <meta property="og:description" content="اجرای تخصصی سازه‌های نیروگاه خورشیدی با طراحی مهندسی، کیفیت بالا و استانداردهای روز دنیا.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://esolar.ir/">
-    <meta property="og:image" content="https://esolar.ir/images/og-image.jpg">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="eSolar | طراحی و اجرای سازه‌های خورشیدی">
-    <meta name="twitter:description" content="اجرای تخصصی سازه‌های نیروگاه خورشیدی با طراحی مهندسی، کیفیت بالا و استانداردهای روز دنیا.">
-    <meta name="twitter:image" content="https://esolar.ir/images/og-image.jpg">
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "eSolar",
-        "url": "https://esolar.ir",
-        "logo": "https://esolar.ir/images/logo.svg",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+98-9922092054",
-            "contactType": "sales",
-            "availableLanguage": ["Persian"]
-        },
-        "sameAs": [
-            "https://www.instagram.com/esolar",
-            "https://t.me/esolar"
-        ]
-    }
-    </script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
-    <link rel="manifest" href="manifest.json">
+    <style>
+        /* ===== همه استایل‌ها اینجاست ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: #000;
+            color: #fff;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+        }
+        .gold-text {
+            background: linear-gradient(135deg, #f9e28c, #d4af37, #aa7c2a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            right: 16px;
+            z-index: 1000;
+            padding: 8px 20px;
+            border-radius: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav__list {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav__list a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav__list a:hover {
+            color: #d4af37;
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+            background: radial-gradient(circle at 20% 10%, rgba(212, 175, 55, 0.1), transparent 50%);
+        }
+        .hero__content {
+            max-width: 800px;
+        }
+        .hero__title {
+            font-size: 4rem;
+            font-weight: 900;
+        }
+        .hero__subtitle {
+            font-size: 1.8rem;
+            color: #f9e28c;
+            margin: 10px 0;
+        }
+        .hero__desc {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 60px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn--primary {
+            background: linear-gradient(135deg, #d4af37, #aa7c2a);
+            color: #000;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+        }
+        .btn--primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+        }
+        .btn--outline {
+            background: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+        }
+        .btn--outline:hover {
+            background: #d4af37;
+            color: #000;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            padding: 30px 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+        }
+        .service-card__icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .footer {
+            margin: 20px 16px;
+            padding: 30px 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+        }
+        .footer__links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin: 15px 0;
+        }
+        .footer__links a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        .footer__links a:hover {
+            opacity: 1;
+            color: #d4af37;
+        }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: #fff;
+        }
+        @media (max-width: 768px) {
+            .nav__list {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.95);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                border-radius: 20px;
+                gap: 16px;
+                text-align: center;
+            }
+            .nav__list.open {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero__title {
+                font-size: 2.5rem;
+            }
+            .hero__subtitle {
+                font-size: 1.2rem;
+            }
+            .services__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- ====== PRELOADER ====== -->
-    <div id="preloader">
-        <div class="loader-glow"></div>
-        <div class="loader-text">eSolar</div>
-    </div>
-
-    <!-- ====== NAVBAR ====== -->
-    <header class="navbar" role="navigation" aria-label="منوی اصلی">
-        <div class="container nav-container">
-            <a href="index.html" class="logo" aria-label="خانه eSolar">
-                <img src="images/logo.svg" alt="لوگوی eSolar" width="50" height="50">
-                <span class="logo-text">eSolar</span>
-            </a>
-            <button class="menu-toggle" aria-label="باز و بسته کردن منو" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <!-- ===== هدر ===== -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="#" style="font-size:1.5rem; font-weight:bold; color:#d4af37; text-decoration:none;">eSolar</a>
+            <nav class="nav">
+                <ul class="nav__list" id="navList">
+                    <li><a href="#">صفحه اصلی</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">خدمات</a></li>
+                    <li><a href="#">پروژه‌ها</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="منو">
+                <span></span><span></span><span></span>
             </button>
-            <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="index.html" role="menuitem" class="active">صفحه اصلی</a></li>
-                <li role="none"><a href="about.html" role="menuitem">درباره ما</a></li>
-                <li role="none"><a href="services.html" role="menuitem">خدمات</a></li>
-                <li role="none"><a href="projects.html" role="menuitem">پروژه‌ها</a></li>
-                <li role="none"><a href="contact.html" role="menuitem">تماس با ما</a></li>
-            </ul>
         </div>
     </header>
 
-    <!-- ====== HERO ====== -->
-    <section class="hero" id="hero">
-        <!-- Background cinematic layers -->
-        <div class="hero-bg">
-            <div class="sun-glow" id="sun-glow"></div>
-            <canvas id="particlesCanvas"></canvas>
-            <div class="lens-flare"></div>
-            <div class="ray-container" id="rayContainer"></div>
-        </div>
-
-        <div class="hero-content container">
-            <div class="hero-text" data-aos="fade-up">
-                <div class="logo-hero">
-                    <img src="images/logo.svg" alt="eSolar" class="logo-animated" width="120" height="120">
-                </div>
-                <h1 class="hero-title">eSolar</h1>
-                <h2 class="hero-subtitle">طراحی و اجرای سازه‌های خورشیدی</h2>
-                <p class="hero-desc">اجرای تخصصی سازه‌های نیروگاه خورشیدی با طراحی مهندسی، کیفیت بالا و استانداردهای روز دنیا.</p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">مشاوره رایگان</a>
-                    <a href="tel:+989922092054" class="btn btn-secondary">تماس با ما</a>
-                </div>
+    <!-- ===== هیرو ===== -->
+    <section class="hero">
+        <div class="hero__content">
+            <div style="font-size:5rem; margin-bottom:10px;">☀️</div>
+            <h1 class="hero__title gold-text">eSolar</h1>
+            <p class="hero__subtitle">طراحی و اجرای سازه‌های خورشیدی</p>
+            <p class="hero__desc">اجرای تخصصی سازه‌های نیروگاه خورشیدی با طراحی مهندسی، کیفیت بالا و استانداردهای روز دنیا.</p>
+            <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+                <a href="#" class="btn btn--primary">مشاوره رایگان</a>
+                <a href="#" class="btn btn--outline">تماس با ما</a>
             </div>
-        </div>
-
-        <!-- Scroll indicator -->
-        <div class="scroll-indicator">
-            <span></span>
-            <span></span>
-            <span></span>
         </div>
     </section>
 
-    <!-- ====== SERVICES ====== -->
-    <section class="services section" id="services" aria-label="خدمات">
+    <!-- ===== خدمات ===== -->
+    <section class="section">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>خدمات ما</h2>
-                <p>راه‌حل‌های جامع انرژی خورشیدی</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card glass" data-aos="flip-up">
-                    <div class="icon"><img src="images/icons/steel.svg" alt="سازه‌های فولادی" width="50" height="50"></div>
+            <h2 class="section-title gold-text">خدمات ما</h2>
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__icon">🔩</div>
                     <h3>سازه‌های فولادی</h3>
-                    <p>طراحی و ساخت سازه‌های فلزی مقاوم برای نصب پنل‌های خورشیدی</p>
+                    <p>طراحی و اجرای اسکلت فلزی نیروگاه‌های خورشیدی</p>
                 </div>
-                <div class="service-card glass" data-aos="flip-up" data-aos-delay="100">
-                    <div class="icon"><img src="images/icons/solar.svg" alt="نصب خورشیدی" width="50" height="50"></div>
-                    <h3>نصب خورشیدی</h3>
-                    <p>اجرای حرفه‌ای نیروگاه‌های خورشیدی با بالاترین کیفیت</p>
+                <div class="service-card">
+                    <div class="service-card__icon">☀️</div>
+                    <h3>نصب پنل خورشیدی</h3>
+                    <p>نصب حرفه‌ای پنل‌های فتوولتائیک</p>
                 </div>
-                <div class="service-card glass" data-aos="flip-up" data-aos-delay="200">
-                    <div class="icon"><img src="images/icons/engineering.svg" alt="مهندسی" width="50" height="50"></div>
-                    <h3>مهندسی</h3>
-                    <p>مطالعات فنی، شبیه‌سازی و نظارت بر پروژه‌های خورشیدی</p>
+                <div class="service-card">
+                    <div class="service-card__icon">📐</div>
+                    <h3>مهندسی و طراحی</h3>
+                    <p>طراحی سه‌بعدی و محاسبات فنی</p>
                 </div>
-                <div class="service-card glass" data-aos="flip-up" data-aos-delay="300">
-                    <div class="icon"><img src="images/icons/maintenance.svg" alt="نگهداری" width="50" height="50"></div>
-                    <h3>نگهداری</h3>
-                    <p>سرویس و نگهداری دوره‌ای برای افزایش راندمان نیروگاه</p>
+                <div class="service-card">
+                    <div class="service-card__icon">🔧</div>
+                    <h3>نگهداری و تعمیرات</h3>
+                    <p>سرویس دوره‌ای و عیب‌یابی تخصصی</p>
                 </div>
-                <div class="service-card glass" data-aos="flip-up" data-aos-delay="400">
-                    <div class="icon"><img src="images/icons/consulting.svg" alt="مشاوره" width="50" height="50"></div>
-                    <h3>مشاوره</h3>
-                    <p>ارائه مشاوره تخصصی در زمینه انرژی خورشیدی و سرمایه‌گذاری</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== PROJECTS ====== -->
-    <section class="projects section" id="projects" aria-label="پروژه‌ها">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>پروژه‌های اجرا شده</h2>
-                <p>نمونه کارهای موفق eSolar</p>
-            </div>
-            <div class="project-filters" data-aos="fade-up">
-                <button class="filter-btn active" data-filter="all">همه</button>
-                <button class="filter-btn" data-filter="steel">سازه‌های فولادی</button>
-                <button class="filter-btn" data-filter="install">نصب</button>
-                <button class="filter-btn" data-filter="engineering">مهندسی</button>
-            </div>
-            <div class="projects-grid">
-                <div class="project-item" data-category="steel">
-                    <img src="images/solar-panels.webp" alt="پروژه سازه فولادی" loading="lazy">
-                    <div class="project-overlay">
-                        <h4>نیروگاه ۱۰ مگاواتی</h4>
-                        <p>سازه فولادی</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="install">
-                    <img src="images/solar-panels.webp" alt="پروژه نصب" loading="lazy">
-                    <div class="project-overlay">
-                        <h4>نیروگاه ۵ مگاواتی</h4>
-                        <p>نصب پنل</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="engineering">
-                    <img src="images/solar-panels.webp" alt="پروژه مهندسی" loading="lazy">
-                    <div class="project-overlay">
-                        <h4>مطالعه نیروگاه ۲۰ مگاواتی</h4>
-                        <p>مهندسی</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="steel">
-                    <img src="images/solar-panels.webp" alt="پروژه سازه فولادی" loading="lazy">
-                    <div class="project-overlay">
-                        <h4>سازه کارخانه خورشیدی</h4>
-                        <p>سازه فولادی</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="install">
-                    <img src="images/solar-panels.webp" alt="پروژه نصب" loading="lazy">
-                    <div class="project-overlay">
-                        <h4>نصب نیروگاه ۲ مگاواتی</h4>
-                        <p>نصب</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="engineering">
-                    <img src="images/solar-panels.webp" alt="پروژه مهندسی" loading="lazy">
-                    <div class="project-overlay">
-                        <h4>طراحی سازه خورشیدی</h4>
-                        <p>مهندسی</p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-card__icon">💡</div>
+                    <h3>مشاوره انرژی</h3>
+                    <p>ارائه راهکارهای بهینه‌سازی مصرف</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== ABOUT ====== -->
-    <section class="about section" id="about" aria-label="درباره ما">
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-text" data-aos="fade-right">
-                    <h2>درباره eSolar</h2>
-                    <p>ما با سال‌ها تجربه در زمینه طراحی و اجرای سازه‌های خورشیدی، به عنوان یکی از پیشگامان این صنعت در ایران فعالیت می‌کنیم.</p>
-                    <p>ماموریت ما ارائه راه‌حل‌های پایدار و با کیفیت برای تولید انرژی پاک است.</p>
-                    <div class="stats">
-                        <div><span>۱۰+</span><br>سال تجربه</div>
-                        <div><span>۵۰+</span><br>پروژه موفق</div>
-                        <div><span>۱۰۰+</span><br>مگاوات نصب شده</div>
-                    </div>
-                    <a href="about.html" class="btn btn-primary">بیشتر بدانید</a>
-                </div>
-                <div class="about-image" data-aos="fade-left">
-                    <img src="images/background.webp" alt="درباره eSolar" loading="lazy">
-                </div>
+            <div style="font-size:1.5rem; font-weight:bold; color:#d4af37;">eSolar</div>
+            <p style="opacity:0.7;">طراحی و اجرای سازه‌های خورشیدی</p>
+            <div class="footer__links">
+                <a href="#">درباره ما</a>
+                <a href="#">خدمات</a>
+                <a href="#">پروژه‌ها</a>
+                <a href="#">تماس با ما</a>
             </div>
-        </div>
-    </section>
-
-    <!-- ====== CONTACT ====== -->
-    <section class="contact section" id="contact" aria-label="تماس با ما">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>تماس با ما</h2>
-                <p>برای مشاوره رایگان با ما در ارتباط باشید</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info glass" data-aos="fade-right">
-                    <h3>اطلاعات تماس</h3>
-                    <p><strong>تلفن:</strong> <a href="tel:+989922092054">۰۹۹۲۲۰۹۲۰۵۴</a></p>
-                    <p><strong>تلفن:</strong> <a href="tel:+98991260024">۰۹۹۹۱۲۶۰۰۲۴</a></p>
-                    <p><strong>واتساپ:</strong> <a href="https://wa.me/989922092054" target="_blank">ارسال پیام</a></p>
-                    <p><strong>ایمیل:</strong> <a href="mailto:info@esolar.ir">info@esolar.ir</a></p>
-                    <div class="social-links">
-                        <a href="#" aria-label="اینستاگرام"><img src="images/icons/instagram.svg" alt="اینستاگرام" width="30"></a>
-                        <a href="#" aria-label="تلگرام"><img src="images/icons/telegram.svg" alt="تلگرام" width="30"></a>
-                        <a href="#" aria-label="لینکدین"><img src="images/icons/linkedin.svg" alt="لینکدین" width="30"></a>
-                    </div>
-                </div>
-                <div class="contact-form glass" data-aos="fade-left">
-                    <form action="#" method="POST">
-                        <input type="text" name="name" placeholder="نام و نام خانوادگی" required>
-                        <input type="email" name="email" placeholder="ایمیل" required>
-                        <input type="tel" name="phone" placeholder="تلفن">
-                        <textarea name="message" placeholder="پیام شما" rows="5" required></textarea>
-                        <button type="submit" class="btn btn-primary">ارسال پیام</button>
-                    </form>
-                </div>
-            </div>
-            <div class="map-container" data-aos="fade-up">
-                <!-- Google Maps Placeholder -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.123456789!2d51.3890!3d35.6892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQxJzIxLjEiTiA1McKwMjMnMjAuNCJF!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== FOOTER ====== -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="images/logo.svg" alt="eSolar" width="40">
-                    <h3>eSolar</h3>
-                    <p>طراحی و اجرای سازه‌های خورشیدی</p>
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="index.html">صفحه اصلی</a></li>
-                        <li><a href="about.html">درباره ما</a></li>
-                        <li><a href="services.html">خدمات</a></li>
-                        <li><a href="projects.html">پروژه‌ها</a></li>
-                        <li><a href="contact.html">تماس با ما</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <a href="#"><img src="images/icons/instagram.svg" alt="اینستاگرام"></a>
-                    <a href="#"><img src="images/icons/telegram.svg" alt="تلگرام"></a>
-                    <a href="#"><img src="images/icons/linkedin.svg" alt="لینکدین"></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; ۲۰۲۶ تمامی حقوق این وب‌سایت متعلق به eSolar می‌باشد.</p>
-            </div>
+            <div style="opacity:0.5; font-size:0.85rem;">© تمامی حقوق این وب سایت متعلق به eSolar می‌باشد.</div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/particles.js" defer></script>
-    <script src="js/animation.js" defer></script>
-    <script src="js/main.js" defer></script>
-
+    <script>
+        // منو همبرگری
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navList').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
